@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 22:03:09 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/28 19:45:24 by facosta          ###   ########.fr       */
+/*   Created: 2024/09/28 19:40:46 by facosta           #+#    #+#             */
+/*   Updated: 2024/09/28 19:49:13 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <stddef.h>
+// #include <string.h>  // EXT
+// #include <stdio.h>  //EXT
+#include "libft.h"
 
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_isascii(int c);
-int		ft_isdigit(int c);
-int		ft_isprint(int c);
+void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, 0, n);
+}
 
-void	ft_bzero(void *s, size_t n);
-size_t	ft_strlen(const char *s);
-void	*ft_memset(void *s, int c, size_t n);
+// int	main(void)
+// {
+// 	int	str[4];
 
-#endif
+// 	str[0] = 43;
+// 	str[1] = 2;
+// 	str[2] = -254;
+// 	// printf("%s\n", str);
+// 	ft_bzero(&str, 20);
+// 	// printf("%s\n", str);
+
+// 	for (int i=0; i < 4; i++)
+// 		printf("%d", str[i]);
+// }
