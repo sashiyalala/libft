@@ -6,13 +6,13 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 19:03:59 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/28 19:09:02 by facosta          ###   ########.fr       */
+/*   Updated: 2024/09/28 19:16:47 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 // #include <ctype.h>  // EXT
 // #include <stdio.h>  // EXT
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {
