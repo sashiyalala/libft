@@ -6,7 +6,7 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 22:03:09 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/28 19:07:16 by facosta          ###   ########.fr       */
+/*   Updated: 2024/09/28 19:12:37 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
+int		ft_isalnum(int c);
 
 void	*ft_memset(void *s, int c, size_t n);
 
