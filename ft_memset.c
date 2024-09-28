@@ -6,13 +6,13 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 22:06:45 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/25 22:56:22 by facosta          ###   ########.fr       */
+/*   Updated: 2024/09/28 19:46:23 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 // #include <string.h>  //EXT
 // #include <stdio.h>  //EXT
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
