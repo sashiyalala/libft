@@ -6,7 +6,7 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 16:00:09 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/29 18:32:35 by facosta          ###   ########.fr       */
+/*   Updated: 2024/09/29 18:40:56 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	}
 }
 
-// void	ft_test_fn(unsigned int i, char *s)
+// static void	ft_test_fn(unsigned int i, char *s)
 // {
 // 	if (i % 2)
 // 		(*s)++;
