@@ -6,11 +6,18 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 16:00:09 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/29 18:31:42 by facosta          ###   ########.fr       */
+/*   Updated: 2024/09/29 18:32:35 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+A cada carácter de la string ’s’, aplica la función
+’f’ dando como parámetros el índice de cada
+carácter dentro de ’s’ y la dirección del propio
+carácter, que podrá modificarse si es necesario.
+ */
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
