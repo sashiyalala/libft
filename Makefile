@@ -12,7 +12,7 @@ $(NAME): $(MY_OBJS)
 	ar rcs $(NAME) $(MY_OBJS)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(MY_OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
