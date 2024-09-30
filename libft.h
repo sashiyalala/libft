@@ -6,7 +6,7 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 22:03:09 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/30 19:23:04 by facosta          ###   ########.fr       */
+/*   Updated: 2024/09/30 19:29:49 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+// BONUS
+t_list	*ft_lstnew(void *content);
 
 #endif
