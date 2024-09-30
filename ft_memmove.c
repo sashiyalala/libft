@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 22:06:45 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/30 18:46:46 by facosta          ###   ########.fr       */
+/*   Created: 2024/09/28 20:26:37 by facosta           #+#    #+#             */
+/*   Updated: 2024/09/29 01:14:56 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <string.h>  //EXT
-// #include <stdio.h>  //EXT
+// #include <stdio.h>  // EXT
+// #include <string.h>  // EXT
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	void	*ptr;
-
-	ptr = s;
-	while (ptr < (s + n))
+	if (dest || src)
 	{
-		*(char *) ptr = c;
-		ptr++;
+		if (dest < src)
+			return (ft_memcpy(dest, src, n));
+		while (n--)
+			ft_memset(dest + n, (int) *(unsigned char *)(src + n), 1);
 	}
-	return (s);
+	return (dest);
 }
 
 // int	main(void)
 // {
-// 	int	str[4];
+// 	char	src[] = "sfidfjhgfdg jhf\n ef";
+// 	char	dest[1];
 
-// 	str[0] = 43;
-// 	str[1] = 2;
-// 	str[2] = -254;
-// 	// printf("%s\n", str);
-// 	// printf("%s\n", (char *) ft_memset(&str, 'A', 20));
-
-// 	for (int i=0; i < 4; i++)
-// 		printf("%d", str[i]);
+// 	printf("before: %s\n", dest);
+// 	memmove(dest, src, 10);
+// 	printf("after:  %s\n", dest);
 // }

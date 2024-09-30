@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 22:06:45 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/30 18:46:46 by facosta          ###   ########.fr       */
+/*   Created: 2024/09/28 22:33:36 by facosta           #+#    #+#             */
+/*   Updated: 2024/09/29 12:42:09 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <string.h>  //EXT
-// #include <stdio.h>  //EXT
+// #include <stdio.h>  // EXT
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	void	*ptr;
+	size_t	i;
 
-	ptr = s;
-	while (ptr < (s + n))
+	if (size)
 	{
-		*(char *) ptr = c;
-		ptr++;
+		i = 0;
+		while (src[i] && (i < size - 1))
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = 0;
 	}
-	return (s);
+	return (ft_strlen(src));
 }
 
 // int	main(void)
 // {
-// 	int	str[4];
-
-// 	str[0] = 43;
-// 	str[1] = 2;
-// 	str[2] = -254;
-// 	// printf("%s\n", str);
-// 	// printf("%s\n", (char *) ft_memset(&str, 'A', 20));
-
-// 	for (int i=0; i < 4; i++)
-// 		printf("%d", str[i]);
+// 	char	dest[100] = "sdjhgfdfjg";
+// 	char	src[20] = "hello world ";
+// 	int		src_len = ft_strlcpy(dest, src, 0);
+// 	printf("len: %d, dest: %s\n", src_len, dest);
 // }

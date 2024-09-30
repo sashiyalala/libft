@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 22:06:45 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/30 18:46:46 by facosta          ###   ########.fr       */
+/*   Created: 2024/09/29 16:00:31 by facosta           #+#    #+#             */
+/*   Updated: 2024/09/29 17:41:05 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <string.h>  //EXT
-// #include <stdio.h>  //EXT
+#include <unistd.h>
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_putstr_fd(char *s, int fd)
 {
-	void	*ptr;
-
-	ptr = s;
-	while (ptr < (s + n))
-	{
-		*(char *) ptr = c;
-		ptr++;
-	}
-	return (s);
+	if (s)
+		write(fd, s, ft_strlen(s));
 }
 
 // int	main(void)
 // {
-// 	int	str[4];
+// 	char	str[20] = "Hello World :)";
 
-// 	str[0] = 43;
-// 	str[1] = 2;
-// 	str[2] = -254;
-// 	// printf("%s\n", str);
-// 	// printf("%s\n", (char *) ft_memset(&str, 'A', 20));
-
-// 	for (int i=0; i < 4; i++)
-// 		printf("%d", str[i]);
+// 	ft_putstr_fd(str, 1);
 // }

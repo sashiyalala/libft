@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 22:06:45 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/30 18:46:46 by facosta          ###   ########.fr       */
+/*   Created: 2024/09/28 19:40:46 by facosta           #+#    #+#             */
+/*   Updated: 2024/09/28 19:49:13 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <string.h>  //EXT
+// #include <string.h>  // EXT
 // #include <stdio.h>  //EXT
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	void	*ptr;
-
-	ptr = s;
-	while (ptr < (s + n))
-	{
-		*(char *) ptr = c;
-		ptr++;
-	}
-	return (s);
+	ft_memset(s, 0, n);
 }
 
 // int	main(void)
@@ -35,7 +27,8 @@ void	*ft_memset(void *s, int c, size_t n)
 // 	str[1] = 2;
 // 	str[2] = -254;
 // 	// printf("%s\n", str);
-// 	// printf("%s\n", (char *) ft_memset(&str, 'A', 20));
+// 	ft_bzero(&str, 20);
+// 	// printf("%s\n", str);
 
 // 	for (int i=0; i < 4; i++)
 // 		printf("%d", str[i]);

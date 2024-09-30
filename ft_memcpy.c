@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 22:06:45 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/30 18:46:46 by facosta          ###   ########.fr       */
+/*   Created: 2024/09/28 19:50:50 by facosta           #+#    #+#             */
+/*   Updated: 2024/09/29 01:14:45 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <string.h>  //EXT
-// #include <stdio.h>  //EXT
+// #include <stdio.h>  // EXT
+// #include <string.h>  // EXT
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	void	*ptr;
+	size_t	i;
 
-	ptr = s;
-	while (ptr < (s + n))
+	i = 0;
+	if (dest || src)
 	{
-		*(char *) ptr = c;
-		ptr++;
+		while (i < n)
+		{
+			ft_memset(dest + i, (int) *(unsigned char *)(src + i), 1);
+			i++;
+		}
 	}
-	return (s);
+	return (dest);
 }
 
 // int	main(void)
 // {
-// 	int	str[4];
+// 	char	src[] = "sfidfjhgfdg jhf\n ef";
+// 	char	dest[100] = "me van a sobreescribir :(";
 
-// 	str[0] = 43;
-// 	str[1] = 2;
-// 	str[2] = -254;
-// 	// printf("%s\n", str);
-// 	// printf("%s\n", (char *) ft_memset(&str, 'A', 20));
-
-// 	for (int i=0; i < 4; i++)
-// 		printf("%d", str[i]);
+// 	printf("before: %s\n", dest);
+// 	ft_memcpy(dest, src, 10);
+// 	printf("after:  %s\n", dest);
 // }

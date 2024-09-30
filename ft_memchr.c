@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 22:06:45 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/30 18:46:46 by facosta          ###   ########.fr       */
+/*   Created: 2024/09/29 00:14:36 by facosta           #+#    #+#             */
+/*   Updated: 2024/09/29 00:33:50 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <string.h>  //EXT
-// #include <stdio.h>  //EXT
+// #include <stdio.h>  // EXT
+// #include <string.h>  // EXT
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	void	*ptr;
+	unsigned char	*ptr;
+	unsigned char	uchar_c;
 
-	ptr = s;
-	while (ptr < (s + n))
+	ptr = (unsigned char *) s;
+	uchar_c = (unsigned char) c;
+	while (ptr < (unsigned char *) s + n)
 	{
-		*(char *) ptr = c;
+		if (*ptr == uchar_c)
+			return ((void *) ptr);
 		ptr++;
 	}
-	return (s);
+	return (NULL);
 }
 
 // int	main(void)
 // {
-// 	int	str[4];
-
-// 	str[0] = 43;
-// 	str[1] = 2;
-// 	str[2] = -254;
-// 	// printf("%s\n", str);
-// 	// printf("%s\n", (char *) ft_memset(&str, 'A', 20));
-
-// 	for (int i=0; i < 4; i++)
-// 		printf("%d", str[i]);
+// 	char str[30] = "donde estara la a?";
+// 	char c = 'a';
+// 	printf("%s\n", (char *) memchr(str, c, 1));
 // }

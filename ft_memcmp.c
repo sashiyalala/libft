@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 22:06:45 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/30 18:46:46 by facosta          ###   ########.fr       */
+/*   Created: 2024/09/29 00:30:45 by facosta           #+#    #+#             */
+/*   Updated: 2024/09/29 01:14:29 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <string.h>  //EXT
-// #include <stdio.h>  //EXT
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	void	*ptr;
+	unsigned char	*ptr1;
+	unsigned char	*ptr2;
+	size_t			i;
 
-	ptr = s;
-	while (ptr < (s + n))
+	ptr1 = (unsigned char *) s1;
+	ptr2 = (unsigned char *) s2;
+	i = 0;
+	while (i < n)
 	{
-		*(char *) ptr = c;
-		ptr++;
+		if (ptr1[i] != ptr2[i])
+			return (ptr1[i] - ptr2[i]);
+		++i;
 	}
-	return (s);
+	return (0);
 }
 
 // int	main(void)
 // {
-// 	int	str[4];
+// 	char	str[10] = "hello";
+// 	char	str2[10] = "hella";
+// 	int		n = 5;
 
-// 	str[0] = 43;
-// 	str[1] = 2;
-// 	str[2] = -254;
-// 	// printf("%s\n", str);
-// 	// printf("%s\n", (char *) ft_memset(&str, 'A', 20));
-
-// 	for (int i=0; i < 4; i++)
-// 		printf("%d", str[i]);
+// 	printf("OG: %d vs 42: %d",
+// 		memcmp(str, str2, n), ft_memcmp(str, str2, n));
 // }
