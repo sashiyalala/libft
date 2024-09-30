@@ -6,7 +6,7 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 22:03:09 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/30 18:47:05 by facosta          ###   ########.fr       */
+/*   Updated: 2024/09/30 19:23:04 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 # define LIBFT_H
 # include <stddef.h>
 
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
+// TODO: Order these imports correctly :_)
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
