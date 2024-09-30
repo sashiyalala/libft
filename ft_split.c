@@ -6,97 +6,135 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 15:59:42 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/29 18:56:21 by facosta          ###   ########.fr       */
+/*   Updated: 2024/10/01 00:16:52 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>  // EXT
+#include <stdlib.h>
 #include "libft.h"
 
+static void		*ft_free_str_array(char **strs, size_t len);
+static size_t	ft_count_words(const char *s, char c);
+static char		*ft_alloc_word(const char *s, size_t begin, size_t end);
+static char		**ft_fill_words(char **words, const char *s, char c);
+
 /*
-Reserva (utilizando malloc(3)) un array de strings
-resultante de separar la string ’s’ en substrings
-utilizando el caracter ’c’ como delimitador. El
-array debe terminar con un puntero NULL
+Reserve (using `malloc`) an array of strings such that they're the result of
+separating the given string `s` in substrings by the separator char `c`.
+The array must finish with a NULL ptr.
 */
-
-static size_t	ft_slices_in_str(char const *s, char c);
-static void		ft_alloc_slices(char **slices, char const *s, char c);
-
-char	**ft_split(char const *s, char c)
+char	**ft_split(const char *s, char c)
 {
-	char	**slices;
-	size_t	n_slices;
+	char	**res;
 
-	if (!s)
+	res = (char **) ft_calloc(ft_count_words(s, c) + 1, sizeof(char *));
+	if (!res)
 		return (NULL);
-	n_slices = ft_slices_in_str(s, c);
-	slices = (char **)ft_calloc(n_slices + 1, sizeof(char *));
-	if (!slices)
-		return (NULL);
-	ft_alloc_slices(slices, s, c);
-	return (slices);
+	return (ft_fill_words(res, s, c));
 }
 
 /*
-Loop over s to find the amount of slices in s.
+Loop over s to find the amount of words in s. We use the `in_word` variable
+as a boolean to keep track of whether the last char was a separator or not.
 NB: if we find more than 1 instance of c together, it's like
-spaces. That doesn't cause a new slice.
-E.g., "hello    world" is broken into just 2 slices by ' '
+spaces. That doesn't cause a new word.
+E.g., "hello    world" is broken into just 2 words by ' '
 */
-static size_t	ft_slices_in_str(char const *s, char c)
+static size_t	ft_count_words(const char *s, char c)
 {
-	size_t	n_slices;
+	int		in_word;
+	size_t	words;
 
-	n_slices = 0;
+	in_word = 0;
+	words = 0;
 	while (*s)
 	{
-		while (*s == c)
-			++s;
-		if (*s)
-			++n_slices;
-		while (*s && *s != c)
-			++s;
+		if (*s != c && !in_word)
+		{
+			in_word = 1;
+			words++;
+		}
+		else if (*s == c)
+			in_word = 0;
+		s++;
 	}
-	return (n_slices);
+	return (words);
 }
 
 /*
-Loop over s to identify each slice again, but this time fill each
-element of the slices array with each slice
+Loop over s to identify each word again, but this time fill each
+element of the words array with each word
 */
-static void	ft_alloc_slices(char **slices, char const *s, char c)
+static char	*ft_alloc_word(const char *s, size_t begin, size_t end)
 {
-	char		**ptr_slices;
-	char const	*s_ptr;
+	char	*word;
+	size_t	iter_w;
 
-	s_ptr = s;
-	ptr_slices = slices;
-	while (*s_ptr)
+	iter_w = 0;
+	word = (char *) ft_calloc(end - begin + 1, sizeof(char));
+	if (!word)
+		return (NULL);
+	while (begin < end)
 	{
-		while (*s == c)
-			++s;
-		s_ptr = s;
-		while (*s_ptr && *s_ptr != c)
-			++s_ptr;
-		if (*s_ptr == c || s_ptr > s)
-		{
-			*ptr_slices = ft_substr(s, 0, s_ptr - s);
-			s = s_ptr;
-			++ptr_slices;
-		}
+		word[iter_w] = s[begin];
+		++iter_w;
+		++begin;
 	}
-	*ptr_slices = NULL;
+	word[iter_w] = 0;
+	return (word);
+}
+
+static void	*ft_free_str_array(char **strs, size_t len)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < len)
+	{
+		free(strs[i]);
+		i++;
+	}
+	free(strs);
+	return (NULL);
+}
+
+static char	**ft_fill_words(char **words, const char *s, char c)
+{
+	long	s_word;
+	size_t	iter_s;
+	size_t	iter_words;
+	size_t	len_s;
+
+	iter_s = 0;
+	iter_words = 0;
+	s_word = -1;
+	len_s = ft_strlen(s);
+	while (iter_s <= len_s)
+	{
+		if (s[iter_s] != c && s_word < 0)
+			s_word = (long) iter_s;
+		else if ((s[iter_s] == c || iter_s == len_s) && s_word >= 0)
+		{
+			words[iter_words] = ft_alloc_word(s, (size_t) s_word, iter_s);
+			if (!(words[iter_words]))
+				return (ft_free_str_array(words, iter_words));
+			s_word = -1;
+			iter_words++;
+		}
+		iter_s++;
+	}
+	return (words);
 }
 
 // int main(void)
 // {
 // 	char	str[100] = "Hola*mundo*cruel**bye***bye**";
-// 	char	**slices = ft_split(str, '*');
+// 	char	**words = ft_split(str, '*');
 
-// 	while (*slices)
+// 	while (*words)
 // 	{
-// 		printf("%s\n", *slices);
-// 		slices++;
+// 		printf("%s\n", *words);
+// 		words++;
 // 	}
 // }
