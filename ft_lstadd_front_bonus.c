@@ -6,7 +6,7 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 19:38:41 by facosta           #+#    #+#             */
-/*   Updated: 2024/10/02 20:16:42 by facosta          ###   ########.fr       */
+/*   Updated: 2024/10/03 01:00:00 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,37 +24,63 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	*lst = new;
 }
 
-// t_list **helper_create_list(int n_elems, ...)
-// {
-// 	t_list **header_ptr = malloc(sizeof(t_list *));
-// 	va_list argp;
+// t_list* bad_get_initilized_list() {
+// 	t_list* my_list = NULL;
 
-// 	*header_ptr = NULL;
-// 	va_start(argp, n_elems);
-// 	for (int i = 0; i < n_elems; i++)
-// 		lstadd_back(header_ptr, lstnew(va_arg(argp, char *)));
+// 	int content_1 = 42;
+// 	t_list element_1 = {&content_1, NULL};
+// 	ft_lstadd_front(&my_list, &element_1);
 
-// 	va_end(argp);
-// 	return header_ptr;
+// 	int content_2 = 43;
+// 	t_list element_2 = {&content_2, NULL};
+// 	ft_lstadd_front(&my_list, &element_2);
+
+// 	return my_list;
 // }
 
-// int	main(void)
+// t_list* get_initilized_list() {
+// 	t_list* my_list = NULL;
+
+//     {
+// 	int* content_1 = (int*)malloc(sizeof(int));
+//     *content_1 = 42;
+// 	t_list* element_1 = (t_list*)malloc(sizeof(t_list));
+//     *element_1 = (t_list){content_1, NULL};
+// 	ft_lstadd_front(&my_list, element_1);
+//     }
+
+//     {
+//     int* content_2 = (int*)malloc(sizeof(int));
+//     *content_2 = 43;
+// 	t_list* element_2 = (t_list*)malloc(sizeof(t_list));
+//     *element_2 = (t_list){content_2, NULL};
+// 	ft_lstadd_front(&my_list, element_2);
+//     }
+
+// 	return my_list;
+// }
+
+// void free_linked_list(t_list* my_list) {
+//     t_list *current_node;
+
+//     while (my_list)
+//     {
+//         free(my_list->content);
+//         my_list->content = NULL;
+
+//         current_node = my_list;
+//         my_list = my_list->next;
+
+//         free(current_node);
+//         current_node = NULL;
+//     }
+// }
+
+// int main()
 // {
-// 	t_list	*my_list[4];
-// 	int		uno = 42;
-// 	int		dos = -42;
-// 	int		tres = 2134345;
-// 	int		new = 0;
+// 	t_list* my_list = get_initilized_list();
 
-// 	my_list[0]->content = &uno;
-// 	my_list[0]->next = my_list[1];
-// 	my_list[1]->content = &dos;
-// 	my_list[1]->next = my_list[2];
-// 	my_list[2]->content = &tres;
-// 	my_list[2]->next = NULL;
+// 	printf("%d\n", *(int*)(my_list->content));
+// 	printf("%d\n", *(int*)(my_list->next->content));
 
-// 	for (int i = 0; i < 3; i++)
-// 	{
-// 		printf("%d: %d\n", i, *((int *)my_list[i]->content));  // EXT??
-// 	}
 // }
