@@ -6,12 +6,11 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 01:20:28 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/29 01:27:54 by facosta          ###   ########.fr       */
+/*   Updated: 2024/10/04 19:27:56 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>  // EXT
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strdup(const char *s)

@@ -6,12 +6,12 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 00:39:17 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/29 00:59:49 by facosta          ###   ########.fr       */
+/*   Updated: 2024/10/04 19:31:26 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>  // EXT
-#include <string.h>  // EXT
+// #include <stdio.h>  // EXT
+// #include <string.h>  // EXT
 #include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)

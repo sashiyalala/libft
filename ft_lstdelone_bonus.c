@@ -6,11 +6,10 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 19:35:46 by facosta           #+#    #+#             */
-/*   Updated: 2024/10/03 19:49:53 by facosta          ###   ########.fr       */
+/*   Updated: 2024/10/04 19:27:51 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 // Given a node `lst`:

@@ -6,11 +6,10 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 16:00:19 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/29 17:32:34 by facosta          ###   ########.fr       */
+/*   Updated: 2024/10/04 19:56:25 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)

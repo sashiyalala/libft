@@ -6,12 +6,11 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 15:59:42 by facosta           #+#    #+#             */
-/*   Updated: 2024/10/01 00:16:52 by facosta          ###   ########.fr       */
+/*   Updated: 2024/10/04 19:27:54 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>  // EXT
-#include <stdlib.h>
 #include "libft.h"
 
 static void		*ft_free_str_array(char **strs, size_t len);
