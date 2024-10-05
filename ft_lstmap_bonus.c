@@ -6,17 +6,13 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 18:31:18 by facosta           #+#    #+#             */
-/*   Updated: 2024/10/04 18:55:17 by facosta          ###   ########.fr       */
+/*   Updated: 2024/10/05 15:19:17 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// #include <stdio.h>  // EXT
 #include "libft.h"
 
-// Loop over all the nodes of a given list and apply the method `f` to the
-// contents of each node. Create a new list resulting from correctly applying
-// `f` on each node successively.
-// The given method `del` is used to eliminate the content of a node, if
-// necessary
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*mapped_lst;
@@ -37,3 +33,69 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (mapped_lst);
 }
+
+// t_list* get_initilized_list() {
+// 	t_list* my_list = NULL;
+
+//     {
+// 	int* content_1 = (int*)malloc(sizeof(int));
+//     *content_1 = 42;
+// 	t_list* element_1 = (t_list*)malloc(sizeof(t_list));
+//     *element_1 = (t_list){content_1, NULL};
+// 	ft_lstadd_front(&my_list, element_1);
+//     }
+
+//     {
+//     int* content_2 = (int*)malloc(sizeof(int));
+//     *content_2 = 43;
+// 	t_list* element_2 = (t_list*)malloc(sizeof(t_list));
+//     *element_2 = (t_list){content_2, NULL};
+// 	ft_lstadd_front(&my_list, element_2);
+//     }
+
+// 	return my_list;
+// }
+
+// void free_linked_list(t_list* my_list) {
+//     t_list *current_node;
+
+//     while (my_list)
+//     {
+//         free(my_list->content);
+//         my_list->content = NULL;
+
+//         current_node = my_list;
+//         my_list = my_list->next;
+
+//         free(current_node);
+//         current_node = NULL;
+//     }
+// }
+
+// void *test_double(void *foo)
+// {
+// 	int *num;
+
+// 	num = (int *)foo;
+// 	*num *= 2;
+// 	return (foo);
+// }
+
+// void test_clear_int(void *content)
+// {
+// 	free(content);
+// }
+
+// int main()
+// {
+// 	t_list* my_list = get_initilized_list();
+
+// 	printf("%d\n", *(int*)(my_list->content));
+// 	printf("%d\n", *(int*)(my_list->next->content));
+
+// 	ft_lstmap(my_list, test_double, test_clear_int);
+
+// 	printf("%d\n", *(int*)(my_list->content));
+// 	printf("%d\n", *(int*)(my_list->next->content));
+// 	free_linked_list(my_list);
+// }
