@@ -6,7 +6,7 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 20:22:21 by facosta           #+#    #+#             */
-/*   Updated: 2024/10/05 15:06:41 by facosta          ###   ########.fr       */
+/*   Updated: 2024/10/05 15:08:51 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	ft_lstsize(t_list *lst)
 		lst = lst->next;
 	return (len);
 }
-
 
 // t_list* get_initilized_list() {
 // 	t_list* my_list = NULL;
