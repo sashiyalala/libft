@@ -1,3 +1,5 @@
+AR = ar
+ARFLAGS = -rc
 CC = cc
 CFLAGS += -Wall -Wextra -Werror
 NAME = libft.a
@@ -15,15 +17,16 @@ MY_BONUS_SRCS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 		ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
 MY_OBJS = $(MY_SRCS:.c=.o)
+
 MY_BONUS_OBJS = $(MY_BONUS_SRCS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(MY_OBJS)
-	ar rcs $(NAME) $(MY_OBJS)
+	$(AR) $(ARFLAGS) $(NAME) $(MY_OBJS)
 
 bonus: $(MY_OBJS) $(MY_BONUS_OBJS)
-	ar rcs $(NAME) $(MY_BONUS_OBJS) $(MY_OBJS)
+	$(AR) $(ARFLAGS) $(NAME) $(MY_BONUS_OBJS) $(MY_OBJS)
 
 clean:
 	$(RM) $(MY_OBJS) $(MY_BONUS_OBJS)
@@ -34,3 +37,5 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
+.DEFAULT: all
