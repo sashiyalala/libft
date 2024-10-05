@@ -6,16 +6,13 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 19:38:41 by facosta           #+#    #+#             */
-/*   Updated: 2024/10/03 01:00:00 by facosta          ###   ########.fr       */
+/*   Updated: 2024/10/05 14:59:57 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>  // EXT
 #include "libft.h"
 
-// Add the node `new` at the beginning of the list `lst` where
-// * lst: direction of a pointer pointing to the first node of a list
-// * new: pointer to the node that you need to put at the beginning of a list
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst || !new)

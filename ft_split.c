@@ -6,7 +6,7 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 15:59:42 by facosta           #+#    #+#             */
-/*   Updated: 2024/10/04 19:27:54 by facosta          ###   ########.fr       */
+/*   Updated: 2024/10/05 15:05:35 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,6 @@ static size_t	ft_count_words(const char *s, char c);
 static char		*ft_alloc_word(const char *s, size_t begin, size_t end);
 static char		**ft_fill_words(char **words, const char *s, char c);
 
-/*
-Reserve (using `malloc`) an array of strings such that they're the result of
-separating the given string `s` in substrings by the separator char `c`.
-The array must finish with a NULL ptr.
-*/
 char	**ft_split(const char *s, char c)
 {
 	char	**res;
@@ -33,13 +28,6 @@ char	**ft_split(const char *s, char c)
 	return (ft_fill_words(res, s, c));
 }
 
-/*
-Loop over s to find the amount of words in s. We use the `in_word` variable
-as a boolean to keep track of whether the last char was a separator or not.
-NB: if we find more than 1 instance of c together, it's like
-spaces. That doesn't cause a new word.
-E.g., "hello    world" is broken into just 2 words by ' '
-*/
 static size_t	ft_count_words(const char *s, char c)
 {
 	int		in_word;
@@ -61,10 +49,6 @@ static size_t	ft_count_words(const char *s, char c)
 	return (words);
 }
 
-/*
-Loop over s to identify each word again, but this time fill each
-element of the words array with each word
-*/
 static char	*ft_alloc_word(const char *s, size_t begin, size_t end)
 {
 	char	*word;

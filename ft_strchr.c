@@ -6,15 +6,13 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 23:11:29 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/29 14:10:22 by facosta          ###   ########.fr       */
+/*   Updated: 2024/10/05 14:06:21 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>  // EXT
 // #include <string.h>  // EXT
 #include "libft.h"
-
-/* Return the string starting from the first instance of the char c */
 
 char	*ft_strchr(const char *s, int c)
 {

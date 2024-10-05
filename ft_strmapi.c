@@ -6,20 +6,11 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 15:59:59 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/29 18:43:46 by facosta          ###   ########.fr       */
+/*   Updated: 2024/10/05 13:54:49 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/*
-Aplica la función ’f’ a cada carácter de la cadena
-’s’, pasando su índice como primer argumento y el
-propio carácter como segundo argumento. Se crea una
-nueva cadena (utilizando malloc(3)) para recoger
-los resultados de las sucesivas aplicaciones de
-’f’.
- */
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

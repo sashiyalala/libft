@@ -6,7 +6,7 @@
 /*   By: facosta <facosta@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:38:15 by facosta           #+#    #+#             */
-/*   Updated: 2024/09/29 14:31:19 by facosta          ###   ########.fr       */
+/*   Updated: 2024/10/05 14:43:19 by facosta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 // int	main(void)
 // {
-// 	char	str[34] = "hello woworld!:)";
+// 	char	str[34] = "wohello woworld!:)wowoo";
 // 	char	set[5] = "wo";
 
 // 	printf("%s\n", ft_strtrim(str, set));
